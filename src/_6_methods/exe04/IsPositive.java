@@ -17,11 +17,7 @@ public class IsPositive {
     }
 
     public static boolean isPositive(int num) {
-        if (num >= 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return num >= 0;
     }
 
     public static boolean isNegative(int num) {

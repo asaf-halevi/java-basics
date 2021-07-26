@@ -9,19 +9,16 @@ package _5_arrays.exe02;
 public class FindMax {
 
     public static void main(String[] args) {
-        int[] arr = {5, 10, 26, 4, 100, 30};
+        int[] numbers = {5, 10, 26, 4, 100, 30};
 
-        int currentMax = arr[0]; // The current max will be the first element of the array
+        int currentMax = numbers[0]; // The current max will be the first element of the array
 
-        for (int i = 1; i < arr.length; i++) // Start from the second element of the array
-        {
-            if (arr[i] > currentMax) {
-                currentMax = arr[i];
+        for (int i = 1; i < numbers.length; i++) { // Start from the second element of the array
+            if (numbers[i] > currentMax) {
+                currentMax = numbers[i];
             }
         }
 
         System.out.println("The max value of the array is: " + currentMax);
-
     }
-
 }
