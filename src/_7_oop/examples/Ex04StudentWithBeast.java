@@ -16,9 +16,7 @@ public class Ex04StudentWithBeast {
     }
 
     public Ex04StudentWithBeast(long id, String privateName, String familyName, Ex04Beast beast) {
-        this.id = id;
-        this.privateName = privateName;
-        this.familyName = familyName;
+        this(id, privateName, familyName);
         this.beast = beast;
     }
 }

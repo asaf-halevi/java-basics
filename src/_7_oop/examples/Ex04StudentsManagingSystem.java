@@ -7,7 +7,7 @@ public class Ex04StudentsManagingSystem {
         students[0] = new Ex04StudentWithBeast(1, "Ramsay", "Bolton");
         students[1] = new Ex04StudentWithBeast(2, "Arya", "Stark", new Ex04Beast("Nymeria", "Direwolf"));
         students[2] = new Ex04StudentWithBeast(3, "Jaime", "Lannister");
-        students[3] = new Ex04StudentWithBeast(4, "Daenerys ", "Targaryen", new Ex04Beast("Drogon", "Dragon"));
+        students[3] = new Ex04StudentWithBeast(4, "Daenerys", "Targaryen", new Ex04Beast("Drogon", "Dragon"));
 
         printStudentsList(students);
     }
