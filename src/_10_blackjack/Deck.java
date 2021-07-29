@@ -36,10 +36,6 @@ public class Deck {
         }
     }
 
-    public Card[] getCards() {
-        return cards;
-    }
-
     public Card getTopCard() {
         if (topCardIndex == DECK_SIZE) {
             throw new IllegalStateException("No more cards in deck");

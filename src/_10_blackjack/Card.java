@@ -28,14 +28,6 @@ public class Card {
         }
     }
 
-    public String getSuit() {
-        return suit;
-    }
-
-    public String getRank() {
-        return rank;
-    }
-
     public int getValue() {
         return value;
     }

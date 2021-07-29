@@ -66,10 +66,6 @@ public class Player {
         return money;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
-    }
-
     public void looseMoney(int bet) {
         System.out.println("You've lost " + bet + "$");
         money -= bet;

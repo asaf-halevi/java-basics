@@ -1,6 +1,5 @@
 package _10_blackjack;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BlackJack {
@@ -137,7 +136,7 @@ public class BlackJack {
                 }
             }
         }
-        if (!isValid){
+        if (!isValid) {
             System.out.println("Invalid bet! You currently have " + human.getMoney() + "$");
         }
         return isValid;
