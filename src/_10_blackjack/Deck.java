@@ -7,6 +7,7 @@ public class Deck {
     private static final int NUM_OF_SWAPS = 1000;
 
     private Card[] cards;
+    private int topCardIndex;
 
     public Deck(){
         cards = new Card[DECK_SIZE];
@@ -25,6 +26,7 @@ public class Deck {
     }
 
     public void shuffle(){
+        topCardIndex = 0;
         Card temp;
         for (int swap=0; swap < NUM_OF_SWAPS; swap++){
             int randomPlaceInDeck = (int)(Math.round(Math.random() * (DECK_SIZE - 1)));
@@ -36,6 +38,13 @@ public class Deck {
 
     public Card[] getCards(){
         return cards;
+    }
+
+    public Card getTopCard(){
+        if (topCardIndex == DECK_SIZE){
+            throw new IllegalStateException("No more cards in deck");
+        }
+        return cards[topCardIndex++];
     }
 
     @Override
