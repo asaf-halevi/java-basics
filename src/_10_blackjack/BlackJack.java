@@ -28,9 +28,9 @@ public class BlackJack {
         dealer = new Player();
         int gamesPlayed = 0;
         int gamesWon = 0;
-        boolean isPlayAnotherRound = true;
+        boolean isPlayAnotherRound;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("You now have " + human.getMoney() + "$");
+        human.printCurrentSumOfMoney();
         System.out.println("Let the game begin!");
         do {
             int moneyBeforeRound = human.getMoney();
@@ -42,7 +42,7 @@ public class BlackJack {
             isPlayAnotherRound = askForAnotherRound();
         } while (human.getMoney() > 0 && isPlayAnotherRound);
         System.out.println("You have played " + gamesPlayed + " games, and won " + gamesWon);
-        System.out.println("You now have " + human.getMoney() + "$");
+        human.printCurrentSumOfMoney();
         this.scanner.close();
     }
 
@@ -65,10 +65,12 @@ public class BlackJack {
         if (human.getCardsTotalValue() > BEST_SCORE){
             humanLostRound(bet);
         } else {
-            while (dealer.getCardsTotalValue() < DEALERS_MAX_VALUE_FOR_DRAW){
+            while (dealer.getCardsTotalValue() <= DEALERS_MAX_VALUE_FOR_DRAW){
+                System.out.println("Dealer draws another card...");
                 dealer.dealCard(deck.getTopCard());
                 printHand(dealer);
             }
+            System.out.println("Dealer stands");
             if (dealer.getCardsTotalValue() > BEST_SCORE){
                 humanWonRound(bet);
             } else {
@@ -79,27 +81,29 @@ public class BlackJack {
                 }
             }
         }
+        System.out.println("\n----------------\n");
     }
 
     private void humanWonRound(int bet) {
-        printHand(human);
+        printBothHands();
         System.out.println("You've won this round!");
         human.winMoney(bet);
     }
 
     private void humanLostRound(int bet) {
-        printHand(human);
         System.out.println("You've lost this round!");
         human.looseMoney(bet);
     }
 
     private boolean askForAnotherRound() {
-        char answer;
+        String answer;
+        char firstLetter;
         do {
             System.out.print("Would you like another round? (Yes / No)");
-            answer = scanner.nextLine().toUpperCase(Locale.ROOT).charAt(0);
-        } while (answer != 'Y' && answer != 'N');
-        return answer  == 'Y';
+            answer = scanner.next();
+            firstLetter = Character.toUpperCase(answer.charAt(0));
+        } while (firstLetter != 'Y' && firstLetter != 'N');
+        return firstLetter  == 'Y';
     }
 
     private int getBet(int money) {
@@ -116,26 +120,35 @@ public class BlackJack {
     }
 
     private boolean isDrawAnother() {
-        char answer;
+        String answer;
+        char firstLetter;
         do {
             System.out.print("Would you like another card? (Draw / Stand)");
-            answer = scanner.nextLine().toUpperCase(Locale.ROOT).charAt(0);
-        } while (answer != 'D' && answer != 'S');
-        return answer  == 'D';
+            answer = scanner.next();
+            firstLetter = Character.toUpperCase(answer.charAt(0));
+        } while (firstLetter != 'D' && firstLetter != 'S');
+        return firstLetter  == 'D';
     }
 
     private boolean isValidBet(int bet) {
         boolean isValid = false;
-        for (int i=0; i < VALID_BETS.length && !isValid; i++){
-            if (VALID_BETS[i] == bet){
+        for (int validBet : VALID_BETS){
+            if (validBet == bet){
                 isValid = true;
+                break;
             }
         }
         return isValid;
     }
 
+    private void printBothHands() {
+        System.out.println("End of round results:");
+        printHand(human);
+        printHand(dealer);
+    }
+
     private void printHand(Player player) {
-        System.out.print(player.equals(human) ? "Player's " : "Dealer's");
+        System.out.print(player.equals(human) ? "Your " : "Dealer's ");
         player.printHand();
     }
 }

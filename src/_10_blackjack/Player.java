@@ -1,5 +1,8 @@
 package _10_blackjack;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Player {
     private static final int INITIAL_SUM_OF_MONEY = 1000;
 
@@ -25,6 +28,7 @@ public class Player {
     }
 
     private void updateTotalValue() {
+        cardsTotalValue = 0;
         int numberOfAces = 0;
         for (int i=0; i < cardIndex; i++){
             cardsTotalValue += cards[i].getValue();
@@ -69,11 +73,36 @@ public class Player {
     public void looseMoney(int bet) {
         System.out.println("You've lost " + bet + "$");
         money -= bet;
+        printCurrentSumOfMoney();
     }
 
     public void winMoney(int bet) {
         bet *=2;
         System.out.println("You've won " + bet + "$");
         money += bet;
+        printCurrentSumOfMoney();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Player)) {
+            return false;
+        }
+        Player player = (Player) o;
+        return cardIndex == player.cardIndex && cardsTotalValue == player.cardsTotalValue && money == player.money && Arrays.equals(cards, player.cards);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(cardIndex, cardsTotalValue, money);
+        result = 31 * result + Arrays.hashCode(cards);
+        return result;
+    }
+
+    public void printCurrentSumOfMoney() {
+        System.out.println("You now have " + money + "$");
     }
 }
