@@ -87,6 +87,7 @@ public class BlackJack {
     }
 
     private void humanLostRound(int bet) {
+        printBothHands();
         System.out.println("You've lost this round!");
         human.looseMoney(bet);
     }
@@ -143,7 +144,7 @@ public class BlackJack {
     }
 
     private void printBothHands() {
-        System.out.println("End of round results:");
+        System.out.println("\nEnd of round results:");
         printHand(human);
         printHand(dealer);
     }
