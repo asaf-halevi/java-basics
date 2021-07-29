@@ -1,6 +1,6 @@
 package _10_blackjack;
 
-import java.util.Locale;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BlackJack {
@@ -8,12 +8,12 @@ public class BlackJack {
     public static final int DEALERS_MAX_VALUE_FOR_DRAW = 17;
     private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
 
-    private Scanner scanner;
+    private final Scanner scanner;
     private Deck deck;
     private Player human;
     private Player dealer;
 
-    public BlackJack(){
+    public BlackJack() {
         scanner = new Scanner(System.in);
     }
 
@@ -28,8 +28,6 @@ public class BlackJack {
         dealer = new Player();
         int gamesPlayed = 0;
         int gamesWon = 0;
-        boolean isPlayAnotherRound;
-        Scanner scanner = new Scanner(System.in);
         human.printCurrentSumOfMoney();
         System.out.println("Let the game begin!");
         do {
@@ -39,9 +37,8 @@ public class BlackJack {
             if (human.getMoney() > moneyBeforeRound) {
                 gamesWon++;
             }
-            isPlayAnotherRound = askForAnotherRound();
-        } while (human.getMoney() > 0 && isPlayAnotherRound);
-        System.out.println("You have played " + gamesPlayed + " games, and won " + gamesWon);
+        } while (human.getMoney() > 0 && askForAnotherRound());
+        System.out.println("You have played " + gamesPlayed + " games and won " + gamesWon);
         human.printCurrentSumOfMoney();
         this.scanner.close();
     }
@@ -62,19 +59,19 @@ public class BlackJack {
             printHand(human);
         }
 
-        if (human.getCardsTotalValue() > BEST_SCORE){
+        if (human.getCardsTotalValue() > BEST_SCORE) {
             humanLostRound(bet);
         } else {
-            while (dealer.getCardsTotalValue() <= DEALERS_MAX_VALUE_FOR_DRAW){
+            while (dealer.getCardsTotalValue() <= DEALERS_MAX_VALUE_FOR_DRAW) {
                 System.out.println("Dealer draws another card...");
                 dealer.dealCard(deck.getTopCard());
                 printHand(dealer);
             }
             System.out.println("Dealer stands");
-            if (dealer.getCardsTotalValue() > BEST_SCORE){
+            if (dealer.getCardsTotalValue() > BEST_SCORE) {
                 humanWonRound(bet);
             } else {
-                if (human.getCardsTotalValue() >= dealer.getCardsTotalValue()){
+                if (human.getCardsTotalValue() >= dealer.getCardsTotalValue()) {
                     humanWonRound(bet);
                 } else {
                     humanLostRound(bet);
@@ -103,14 +100,14 @@ public class BlackJack {
             answer = scanner.next();
             firstLetter = Character.toUpperCase(answer.charAt(0));
         } while (firstLetter != 'Y' && firstLetter != 'N');
-        return firstLetter  == 'Y';
+        return firstLetter == 'Y';
     }
 
     private int getBet(int money) {
         int bet;
         do {
             System.out.print("Place your bet ( ");
-            for (int validBet : VALID_BETS){
+            for (int validBet : VALID_BETS) {
                 System.out.print(validBet + " ");
             }
             System.out.print("): ");
@@ -127,16 +124,21 @@ public class BlackJack {
             answer = scanner.next();
             firstLetter = Character.toUpperCase(answer.charAt(0));
         } while (firstLetter != 'D' && firstLetter != 'S');
-        return firstLetter  == 'D';
+        return firstLetter == 'D';
     }
 
     private boolean isValidBet(int bet) {
         boolean isValid = false;
-        for (int validBet : VALID_BETS){
-            if (validBet == bet){
-                isValid = true;
-                break;
+        if (bet <= human.getMoney()) {
+            for (int validBet : VALID_BETS) {
+                if (validBet == bet) {
+                    isValid = true;
+                    break;
+                }
             }
+        }
+        if (!isValid){
+            System.out.println("Invalid bet! You currently have " + human.getMoney() + "$");
         }
         return isValid;
     }

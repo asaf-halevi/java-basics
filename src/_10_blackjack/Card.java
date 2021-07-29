@@ -8,8 +8,8 @@ public class Card {
     private static final int VALUE_OF_ROYALTY = 10;
     private static final int VALUE_OF_ACE = 11;
 
-    private String suit;
-    private String rank;
+    private final String suit;
+    private final String rank;
     private int value;
 
     public Card(String suit, String rank) {
@@ -19,9 +19,9 @@ public class Card {
     }
 
     private void calculateValueByRank() {
-        if (rank.length() < LENGTH_OF_ACE){
+        if (rank.length() < LENGTH_OF_ACE) {
             value = Integer.parseInt(rank);
-        } else if (rank.length() > LENGTH_OF_ACE){
+        } else if (rank.length() > LENGTH_OF_ACE) {
             value = VALUE_OF_ROYALTY;
         } else {
             value = VALUE_OF_ACE;

@@ -11,7 +11,7 @@ public class Player {
     private int cardsTotalValue;
     private int money;
 
-    public Player(){
+    public Player() {
         money = INITIAL_SUM_OF_MONEY;
         resetCards();
     }
@@ -22,7 +22,7 @@ public class Player {
         cardsTotalValue = 0;
     }
 
-    public void dealCard(Card card){
+    public void dealCard(Card card) {
         cards[cardIndex++] = card;
         updateTotalValue();
     }
@@ -30,24 +30,24 @@ public class Player {
     private void updateTotalValue() {
         cardsTotalValue = 0;
         int numberOfAces = 0;
-        for (int i=0; i < cardIndex; i++){
+        for (int i = 0; i < cardIndex; i++) {
             cardsTotalValue += cards[i].getValue();
-            if (cards[i].isAce()){
+            if (cards[i].isAce()) {
                 numberOfAces++;
             }
         }
 
-        while (cardsTotalValue > BlackJack.BEST_SCORE && numberOfAces > 0){
+        while (cardsTotalValue > BlackJack.BEST_SCORE && numberOfAces > 0) {
             cardsTotalValue -= 10;
             numberOfAces--;
         }
     }
 
     public void printHand() {
-        System.out.print("Cards in hand: ");
-        for (int i=0; i < cardIndex; i++){
+        System.out.print("cards: ");
+        for (int i = 0; i < cardIndex; i++) {
             System.out.print(cards[i]);
-            if (i < cardIndex - 1){
+            if (i < cardIndex - 1) {
                 System.out.print(" | ");
             }
         }
@@ -77,7 +77,7 @@ public class Player {
     }
 
     public void winMoney(int bet) {
-        bet *=2;
+        bet *= 2;
         System.out.println("You've won " + bet + "$");
         money += bet;
         printCurrentSumOfMoney();
