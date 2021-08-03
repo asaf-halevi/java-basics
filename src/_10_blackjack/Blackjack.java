@@ -2,29 +2,30 @@ package _10_blackjack;
 
 import java.util.Scanner;
 
-public class BlackJack {
+public class Blackjack {
+    private static final int INITIAL_SUM_OF_MONEY = 1000;
     public static final int BEST_SCORE = 21;
     public static final int DEALERS_MAX_VALUE_FOR_DRAW = 17;
     private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
 
     private final Scanner scanner;
     private Deck deck;
-    private Player human;
-    private Player dealer;
+    private BlackjackPlayer human;
+    private BlackjackPlayer dealer;
 
-    public BlackJack() {
+    public Blackjack() {
         scanner = new Scanner(System.in);
     }
 
     public static void main(String[] args) {
-        BlackJack game = new BlackJack();
+        Blackjack game = new Blackjack();
         game.startGame();
     }
 
     private void startGame() {
         deck = new Deck();
-        human = new Player();
-        dealer = new Player();
+        human = new BlackjackPlayer((Deck.DECK_SIZE / 2), INITIAL_SUM_OF_MONEY);
+        dealer = new BlackjackPlayer((Deck.DECK_SIZE / 2));
         int gamesPlayed = 0;
         int gamesWon = 0;
         human.printCurrentSumOfMoney();
@@ -43,7 +44,7 @@ public class BlackJack {
     }
 
     private void playRound() {
-        int bet = getBet(human.getMoney());
+        int bet = getBet();
         deck.shuffle();
         human.resetCards();
         dealer.resetCards();
@@ -83,7 +84,7 @@ public class BlackJack {
     private void humanWonRound(int bet) {
         printBothHands();
         System.out.println("You've won this round!");
-        human.winMoney(bet);
+        human.winMoney(bet * 2);
     }
 
     private void humanLostRound(int bet) {
@@ -103,7 +104,7 @@ public class BlackJack {
         return firstLetter == 'Y';
     }
 
-    private int getBet(int money) {
+    private int getBet() {
         int bet;
         do {
             System.out.print("Place your bet ( ");
@@ -149,7 +150,7 @@ public class BlackJack {
         printHand(dealer);
     }
 
-    private void printHand(Player player) {
+    private void printHand(BlackjackPlayer player) {
         System.out.print(player.equals(human) ? "Your " : "Dealer's ");
         player.printHand();
     }
