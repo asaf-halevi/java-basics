@@ -3,9 +3,9 @@ package _10_blackjack;
 import java.util.Scanner;
 
 public class Blackjack {
-    private static final int INITIAL_SUM_OF_MONEY = 1000;
     public static final int BEST_SCORE = 21;
     public static final int DEALERS_MAX_VALUE_FOR_DRAW = 17;
+    private static final int INITIAL_SUM_OF_MONEY = 1000;
     private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
 
     private final Scanner scanner;

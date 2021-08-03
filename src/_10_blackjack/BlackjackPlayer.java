@@ -21,7 +21,7 @@ public class BlackjackPlayer extends CardPlayer {
     private void updateCardsTotalValue() {
         cardsTotalValue = 0;
         int numberOfAces = 0;
-        for (int i=0; i < getCardIndex(); i++) {
+        for (int i = 0; i < getCardIndex(); i++) {
             cardsTotalValue += getCard(i).getValue();
             if (getCard(i).isAce()) {
                 numberOfAces++;

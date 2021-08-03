@@ -3,10 +3,10 @@ package _10_blackjack;
 import java.util.Arrays;
 
 public class CardPlayer {
+    private final int maxCardsInHand;
     private BlackjackCard[] cards;
     private int cardIndex;
     private int money;
-    private final int maxCardsInHand;
 
     public CardPlayer(int maxCardsInHand) {
         this.maxCardsInHand = maxCardsInHand;
