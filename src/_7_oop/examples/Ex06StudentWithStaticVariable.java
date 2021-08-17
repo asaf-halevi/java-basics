@@ -1,22 +1,25 @@
 package _7_oop.examples;
 
-public class Ex05StudentWithBeastAndMethods {
+public class Ex06StudentWithStaticVariable {
+    static int studentsCounter = 0;
+
     long id;
     String privateName;
     String familyName;
     Ex04Beast beast;
 
-    public Ex05StudentWithBeastAndMethods() {
+    public Ex06StudentWithStaticVariable() {
+        id = ++studentsCounter;
     }
 
-    public Ex05StudentWithBeastAndMethods(long id, String privateName, String familyName) {
-        this.id = id;
+    public Ex06StudentWithStaticVariable(String privateName, String familyName) {
+        this();
         this.privateName = privateName;
         this.familyName = familyName;
     }
 
-    public Ex05StudentWithBeastAndMethods(long id, String privateName, String familyName, Ex04Beast beast) {
-        this(id, privateName, familyName);
+    public Ex06StudentWithStaticVariable(String privateName, String familyName, Ex04Beast beast) {
+        this(privateName, familyName);
         this.beast = beast;
     }
 

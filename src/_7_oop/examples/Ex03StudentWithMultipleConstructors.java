@@ -8,7 +8,7 @@ public class Ex03StudentWithMultipleConstructors {
     public Ex03StudentWithMultipleConstructors() {
     }
 
-    public Ex03StudentWithMultipleConstructors (long id) {
+    public Ex03StudentWithMultipleConstructors(long id) {
         if (id > 0) {
             this.id = id;
         } else {

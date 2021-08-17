@@ -1,4 +1,4 @@
-package _10_blackjack;
+package _11_blackjack;
 
 import java.util.Scanner;
 

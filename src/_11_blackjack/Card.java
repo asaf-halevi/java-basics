@@ -1,4 +1,4 @@
-package _10_blackjack;
+package _11_blackjack;
 
 public class Card {
     public static final String[] SUITS = {"Spade", "Club", "Heart", "Diamond"};

@@ -3,7 +3,7 @@ package _7_oop.exe01;
 public class CarFactory {
     public static void main(String[] args) {
         // Create red Mazda 3
-        Car mazda = null;
+        Car mazda;
         mazda = new Car();
         mazda.setType("Mazda 3");
         mazda.setColor("Red");
