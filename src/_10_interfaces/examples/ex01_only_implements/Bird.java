@@ -9,7 +9,7 @@ public class Bird implements Flyable {
     }
 
     public void setNumberOfWings(int numberOfWings) {
-        this.numberOfWings = Math.min(numberOfWings, MAX_NUMBER_OF_WINGS);
+        this.numberOfWings = Math.min(numberOfWings, MAX_NUMBER_OF_WINGS); //example of using the final
     }
 
     @Override

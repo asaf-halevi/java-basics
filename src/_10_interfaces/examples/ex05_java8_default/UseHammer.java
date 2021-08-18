@@ -1,4 +1,4 @@
-package _10_interfaces.examples.ex04_java8_default;
+package _10_interfaces.examples.ex05_java8_default;
 
 public class UseHammer {
     public static void main(String[] args) {
@@ -10,8 +10,10 @@ public class UseHammer {
         for (Person person : persons) {
             person.whoAmI();
             if (person instanceof IHammerUser) {
-                System.out.println("The hammer's weight is:" + ((IHammerUser) person).getHammerWeight() + "\n");
+                System.out.println("The hammer's weight is:" + ((IHammerUser) person).getHammerWeight());
+                ((IHammerUser) person).putInPlace();
             }
+            System.out.println();
         }
     }
 }

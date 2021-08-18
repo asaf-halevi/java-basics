@@ -1,4 +1,4 @@
-package _10_interfaces.examples.ex04_java8_default;
+package _10_interfaces.examples.ex05_java8_default;
 
 public class Carpenter extends Person implements IHammerUser {
 

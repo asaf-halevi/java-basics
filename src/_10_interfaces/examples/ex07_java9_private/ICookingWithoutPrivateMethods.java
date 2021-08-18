@@ -1,4 +1,4 @@
-package _10_interfaces.examples.ex06_java9_private;
+package _10_interfaces.examples.ex07_java9_private;
 
 public interface ICookingWithoutPrivateMethods {
 

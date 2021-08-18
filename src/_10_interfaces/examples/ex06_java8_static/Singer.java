@@ -1,4 +1,4 @@
-package _10_interfaces.examples.ex05_java8_static;
+package _10_interfaces.examples.ex06_java8_static;
 
 public class Singer extends Person {
     @Override
