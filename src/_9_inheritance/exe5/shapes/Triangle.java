@@ -39,10 +39,6 @@ public class Triangle extends Shape {
         return "Triangle [side1=" + side1 + ", side2=" + side2 + ", side3=" + side3 + ", center=" + center + ", color=" + color + "]";
     }
 
-    /**
-     * This method calculates the area by using teh Heron's formuls:
-     * https://www.mathsisfun.com/geometry/herons-formula.html
-     */
     @Override
     public double getArea() {
         double s = (side1 + side2 + side3) / 2;
@@ -62,5 +58,4 @@ public class Triangle extends Shape {
     public boolean isIsosceles() {
         return (side1 == side2 || side1 == side3 || side2 == side3);
     }
-
 }

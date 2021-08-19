@@ -1,16 +1,8 @@
 package _9_inheritance.exe5.shapes;
 
-/**
- * This class represents a point. It have 2 coordinates: x & y.
- *
- * @author Tal Green
- */
 public class Point {
-    // membersa
     private double x;
     private double y;
-
-    // constructors
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
@@ -19,8 +11,6 @@ public class Point {
     public Point() {
         this(0, 0);
     }
-
-    // Getters & setters
 
     public double getX() {
         return x;

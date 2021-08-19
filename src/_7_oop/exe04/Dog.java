@@ -6,7 +6,6 @@ public class Dog {
     private String m_color = "";
     private int m_age = 0;
 
-    // Constructors
     public Dog() {
 
     }

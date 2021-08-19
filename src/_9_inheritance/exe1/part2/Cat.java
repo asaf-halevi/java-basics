@@ -1,7 +1,7 @@
 package _9_inheritance.exe1.part2;
 
 public class Cat extends Animal {
-    // Constructors
+
     public Cat() {
         super();
     }

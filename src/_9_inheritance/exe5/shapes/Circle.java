@@ -3,8 +3,6 @@ package _9_inheritance.exe5.shapes;
 public class Circle extends Shape {
     private double radius;
 
-    // Constructors
-
     public Circle(Point center, String color, double radius) {
         super(center, color);
         this.radius = radius;
@@ -18,7 +16,6 @@ public class Circle extends Shape {
         return radius;
     }
 
-    // Getters & Setters
     public void setRadius(double radius) {
         this.radius = radius;
     }

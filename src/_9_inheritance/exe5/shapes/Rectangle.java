@@ -4,9 +4,9 @@ public class Rectangle extends Shape {
     private double lenght;
     private double width;
 
-    public Rectangle(Point center, String color, double lenght, double width) {
+    public Rectangle(Point center, String color, double length, double width) {
         super(center, color);
-        this.lenght = lenght;
+        this.lenght = length;
         this.width = width;
     }
 
@@ -44,7 +44,7 @@ public class Rectangle extends Shape {
     /**
      * This method returns true if this rectangle is a square.
      *
-     * @return
+     * @return boolean
      */
     public boolean isSquare() {
         return (lenght == width);

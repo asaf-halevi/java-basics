@@ -16,5 +16,4 @@ public class MainClass {
 
         System.out.println(table);
     }
-
 }

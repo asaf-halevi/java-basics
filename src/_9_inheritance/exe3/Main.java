@@ -12,5 +12,4 @@ public class Main {
         alon.WhoAmI();
         System.out.println(alon.calcMonthlySalary());
     }
-
 }

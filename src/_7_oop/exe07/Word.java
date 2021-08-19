@@ -15,9 +15,8 @@ package _7_oop.exe07;
  * @author Tal Green
  */
 public class Word {
-    private String m_word = null;
+    private String m_word;
 
-    // Constructors
     public Word() {
         m_word = "";
     }

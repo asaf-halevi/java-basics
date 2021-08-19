@@ -1,12 +1,10 @@
 package _9_inheritance.exe3;
 
 public class Employee {
-    ////////////////////////////////////// Members
     private String m_name;
     private int m_id;
     private int m_basicSalary;
 
-    //////////////////////////////////////  Constructors
     public Employee() {
         m_name = "";
         m_id = 0;
@@ -19,7 +17,6 @@ public class Employee {
         m_basicSalary = basicSalary;
     }
 
-    ///////////////////////////////////// Getters & Setters
     public String getName() {
         return m_name;
     }
@@ -39,8 +36,6 @@ public class Employee {
     public int getId() {
         return m_id;
     }
-
-    /////////////////////////////////// Methods
 
     public int calcMonthlySalary() {
         return m_basicSalary;

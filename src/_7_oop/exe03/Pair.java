@@ -16,7 +16,6 @@ public class Pair {
     private int m_num1 = 0;
     private int m_num2 = 0;
 
-    // Getters & Setters
     public int getNum1() {
         return m_num1;
     }

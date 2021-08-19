@@ -1,11 +1,10 @@
 package _9_inheritance.exe1.part2;
 
 public class Animal {
-    // Members
+
     protected String m_name;
     protected String m_color;
 
-    // Constructors
     public Animal() {
 
     }
@@ -16,7 +15,6 @@ public class Animal {
         m_color = color;
     }
 
-    // Getters & Setters
     public String getName() {
         return m_name;
     }

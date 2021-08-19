@@ -1,16 +1,10 @@
 package _9_inheritance.exe5.shapes;
 
-/**
- * This class represents an abstract shape.
- *
- * @author Tal Green
- */
 public class Shape {
-    // Members
+
     protected Point center;
     protected String color;
 
-    // Constructors
     public Shape(Point center, String color) {
         this.center = center;
         this.color = color;
@@ -19,8 +13,6 @@ public class Shape {
     public Shape() {
         this(new Point(), "White");
     }
-
-    // Getters & Setters
 
     public Point getCenter() {
         return center;
@@ -43,22 +35,10 @@ public class Shape {
         return "Shape [center=" + center + ", color=" + color + "]";
     }
 
-    // Methods
-
-    /**
-     * This method returns the area of the shape
-     *
-     * @return
-     */
     public double getArea() {
         return 0;
     }
 
-    /**
-     * This method returns the perimeter of the shap.
-     *
-     * @return
-     */
     public double getPerimeter() {
         return 0;
     }
