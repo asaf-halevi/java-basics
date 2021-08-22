@@ -29,7 +29,7 @@ public class RandomNumbers {
      * prints a number between 0-100
      */
     private static void grade() {
-        int diceResult = (int) (Math.floor(Math.random() * 100)) + 1;
+        int diceResult = (int) (Math.floor(Math.random() * 101));
         System.out.print(diceResult + " ");
     }
 
