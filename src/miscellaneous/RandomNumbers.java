@@ -34,7 +34,7 @@ public class RandomNumbers {
     }
 
     /**
-     * prints a number between 0-100
+     * verify that the numbers are actually between 0-100
      */
     private static void verifyGrade() {
         int diceResult;
