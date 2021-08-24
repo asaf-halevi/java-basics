@@ -12,6 +12,8 @@ public class Blackjack {
     private Deck deck;
     private BlackjackPlayer human;
     private BlackjackPlayer dealer;
+    private int gamesPlayed;
+    private int gamesWon;
 
     public Blackjack() {
         scanner = new Scanner(System.in);
@@ -20,16 +22,21 @@ public class Blackjack {
     public static void main(String[] args) {
         Blackjack game = new Blackjack();
         game.startGame();
+        game.playAllRounds();
+        game.finishGame();
     }
 
     private void startGame() {
         deck = new Deck();
         human = new BlackjackPlayer((Deck.DECK_SIZE / 2), INITIAL_SUM_OF_MONEY);
         dealer = new BlackjackPlayer((Deck.DECK_SIZE / 2));
-        int gamesPlayed = 0;
-        int gamesWon = 0;
+        gamesPlayed = 0;
+        gamesWon = 0;
         human.printCurrentSumOfMoney();
         System.out.println("Let the game begin!");
+    }
+
+    private void playAllRounds(){
         do {
             int moneyBeforeRound = human.getMoney();
             playRound();
@@ -38,6 +45,9 @@ public class Blackjack {
                 gamesWon++;
             }
         } while (human.getMoney() > 0 && askForAnotherRound());
+    }
+
+    private void finishGame(){
         System.out.println("You have played " + gamesPlayed + " games and won " + gamesWon);
         human.printCurrentSumOfMoney();
         this.scanner.close();
