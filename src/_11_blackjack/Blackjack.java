@@ -1,19 +1,17 @@
 package _11_blackjack;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Blackjack {
     public static final int BEST_SCORE = 21;
     public static final int DEALERS_MAX_VALUE_FOR_DRAW = 17;
-    private static final int INITIAL_SUM_OF_MONEY = 1000;
-    private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
     public static final char QUIT = 'Q';
     public static final char DRAW = 'D';
     public static final char STAND = 'S';
     public static final char NO = 'N';
     public static final char YES = 'Y';
-
+    private static final int INITIAL_SUM_OF_MONEY = 1000;
+    private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
     private final Scanner scanner;
     private Deck deck;
     private BlackjackPlayer human;
@@ -42,7 +40,7 @@ public class Blackjack {
         System.out.println("Let the game begin!");
     }
 
-    private void playAllRounds(){
+    private void playAllRounds() {
         do {
             int moneyBeforeRound = human.getMoney();
             playRound();
@@ -127,7 +125,7 @@ public class Blackjack {
             checkIfGameIsToBeFinished(Character.toUpperCase(answer.charAt(0)));
             try {
                 bet = Integer.parseInt(answer);
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 bet = 0;
             }
         } while (!isValidBet(bet));
@@ -179,7 +177,7 @@ public class Blackjack {
         }
     }
 
-    private void finishGame(){
+    private void finishGame() {
         System.out.println("\nYou have played " + gamesPlayed + " games and won " + gamesWon);
         human.printCurrentSumOfMoney();
         this.scanner.close();
