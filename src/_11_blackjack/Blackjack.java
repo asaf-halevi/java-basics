@@ -132,18 +132,6 @@ public class Blackjack {
         return bet;
     }
 
-    private boolean isDrawAnother() {
-        String answer;
-        char firstLetter;
-        do {
-            System.out.print("Would you like another card? (Draw / Stand / Quit)");
-            answer = scanner.next();
-            firstLetter = Character.toUpperCase(answer.charAt(0));
-        } while (firstLetter != DRAW && firstLetter != STAND && firstLetter != QUIT);
-        checkIfGameIsToBeFinished(firstLetter);
-        return firstLetter == DRAW;
-    }
-
     private boolean isValidBet(int bet) {
         boolean isValid = false;
         if (bet <= human.getMoney()) {
@@ -158,6 +146,18 @@ public class Blackjack {
             System.out.println("Invalid bet! You currently have " + human.getMoney() + "$");
         }
         return isValid;
+    }
+
+    private boolean isDrawAnother() {
+        String answer;
+        char firstLetter;
+        do {
+            System.out.print("Would you like another card? (Draw / Stand / Quit)");
+            answer = scanner.next();
+            firstLetter = Character.toUpperCase(answer.charAt(0));
+        } while (firstLetter != DRAW && firstLetter != STAND && firstLetter != QUIT);
+        checkIfGameIsToBeFinished(firstLetter);
+        return firstLetter == DRAW;
     }
 
     private void printBothHands() {
