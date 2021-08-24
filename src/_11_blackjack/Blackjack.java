@@ -1,5 +1,6 @@
 package _11_blackjack;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Blackjack {
@@ -7,6 +8,11 @@ public class Blackjack {
     public static final int DEALERS_MAX_VALUE_FOR_DRAW = 17;
     private static final int INITIAL_SUM_OF_MONEY = 1000;
     private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
+    public static final char QUIT = 'Q';
+    public static final char DRAW = 'D';
+    public static final char STAND = 'S';
+    public static final char NO = 'N';
+    public static final char YES = 'Y';
 
     private final Scanner scanner;
     private Deck deck;
@@ -45,12 +51,6 @@ public class Blackjack {
                 gamesWon++;
             }
         } while (human.getMoney() > 0 && askForAnotherRound());
-    }
-
-    private void finishGame(){
-        System.out.println("You have played " + gamesPlayed + " games and won " + gamesWon);
-        human.printCurrentSumOfMoney();
-        this.scanner.close();
     }
 
     private void playRound() {
@@ -107,14 +107,15 @@ public class Blackjack {
         String answer;
         char firstLetter;
         do {
-            System.out.print("Would you like another round? (Yes / No)");
+            System.out.print("Would you like another round? (Yes / No / Quit)");
             answer = scanner.next();
             firstLetter = Character.toUpperCase(answer.charAt(0));
-        } while (firstLetter != 'Y' && firstLetter != 'N');
-        return firstLetter == 'Y';
+        } while (firstLetter != YES && firstLetter != NO && firstLetter != QUIT);
+        return firstLetter == YES;
     }
 
     private int getBet() {
+        String answer;
         int bet;
         do {
             System.out.print("Place your bet ( ");
@@ -122,7 +123,13 @@ public class Blackjack {
                 System.out.print(validBet + " ");
             }
             System.out.print("): ");
-            bet = scanner.nextInt();
+            answer = scanner.next();
+            checkIfGameIsToBeFinished(Character.toUpperCase(answer.charAt(0)));
+            try {
+                bet = Integer.parseInt(answer);
+            } catch (NumberFormatException e){
+                bet = 0;
+            }
         } while (!isValidBet(bet));
         return bet;
     }
@@ -131,11 +138,12 @@ public class Blackjack {
         String answer;
         char firstLetter;
         do {
-            System.out.print("Would you like another card? (Draw / Stand)");
+            System.out.print("Would you like another card? (Draw / Stand / Quit)");
             answer = scanner.next();
             firstLetter = Character.toUpperCase(answer.charAt(0));
-        } while (firstLetter != 'D' && firstLetter != 'S');
-        return firstLetter == 'D';
+        } while (firstLetter != DRAW && firstLetter != STAND && firstLetter != QUIT);
+        checkIfGameIsToBeFinished(firstLetter);
+        return firstLetter == DRAW;
     }
 
     private boolean isValidBet(int bet) {
@@ -163,5 +171,18 @@ public class Blackjack {
     private void printHand(BlackjackPlayer player) {
         System.out.print(player.equals(human) ? "Your " : "Dealer's ");
         player.printHand();
+    }
+
+    private void checkIfGameIsToBeFinished(char firstLetter) {
+        if (firstLetter == QUIT) {
+            finishGame();
+        }
+    }
+
+    private void finishGame(){
+        System.out.println("\nYou have played " + gamesPlayed + " games and won " + gamesWon);
+        human.printCurrentSumOfMoney();
+        this.scanner.close();
+        System.exit(0);
     }
 }
