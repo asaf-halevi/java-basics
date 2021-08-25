@@ -3,6 +3,7 @@ package _7_exceptions.examples;
 import java.util.Scanner;
 
 public class Ex05UncheckArithmeticExceptionSolution2 {//Good practice
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("First number:");

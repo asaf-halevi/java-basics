@@ -9,6 +9,6 @@ public class BlackjackDeck extends Deck {
 
     @Override
     public BlackjackCard getTopCard() {
-        return (BlackjackCard)super.getTopCard();
+        return (BlackjackCard) super.getTopCard();
     }
 }

@@ -40,9 +40,15 @@ public class BlackjackPlayer extends CardPlayer {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
         BlackjackPlayer that = (BlackjackPlayer) o;
         return cardsTotalValue == that.cardsTotalValue;
     }
