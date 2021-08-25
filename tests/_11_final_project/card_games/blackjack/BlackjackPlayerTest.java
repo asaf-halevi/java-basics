@@ -1,12 +1,10 @@
 package _11_final_project.card_games.blackjack;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 import java.util.Objects;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class BlackjackPlayerTest {
     @Test

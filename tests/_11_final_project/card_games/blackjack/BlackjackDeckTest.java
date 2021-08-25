@@ -1,10 +1,9 @@
 package _11_final_project.card_games.blackjack;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
-import _11_final_project.card_games.Deck;
-import org.junit.Test;
 
 public class BlackjackDeckTest {
     @Test

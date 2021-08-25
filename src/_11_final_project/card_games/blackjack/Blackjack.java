@@ -3,7 +3,6 @@ package _11_final_project.card_games.blackjack;
 import _11_final_project.card_games.Deck;
 
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Blackjack {
     public static final int BEST_SCORE = 21;
@@ -13,9 +12,9 @@ public class Blackjack {
     public static final char STAND = 'S';
     public static final char NO = 'N';
     public static final char YES = 'Y';
+    public static final int PAUSE_TIME = 2_100_900_000;
     private static final int INITIAL_SUM_OF_MONEY = 1000;
     private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
-    public static final int PAUSE_TIME = 2_100_900_000;
     private final Scanner scanner;
     private BlackjackDeck deck;
     private BlackjackPlayer human;
@@ -99,7 +98,7 @@ public class Blackjack {
     }
 
     private void pause() {
-        for (long i = 0; i < PAUSE_TIME; i++){
+        for (long i = 0; i < PAUSE_TIME; i++) {
         }
     }
 

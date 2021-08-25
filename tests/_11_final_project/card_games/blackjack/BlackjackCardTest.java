@@ -1,8 +1,8 @@
 package _11_final_project.card_games.blackjack;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class BlackjackCardTest {
     @Test
