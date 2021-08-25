@@ -1,4 +1,4 @@
-package _11_blackjack;
+package _11_final_project.card_games;
 
 import java.util.Arrays;
 

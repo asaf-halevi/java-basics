@@ -1,6 +1,9 @@
-package _11_blackjack;
+package _11_final_project.card_games.blackjack;
+
+import _11_final_project.card_games.Deck;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Blackjack {
     public static final int BEST_SCORE = 21;
@@ -12,6 +15,7 @@ public class Blackjack {
     public static final char YES = 'Y';
     private static final int INITIAL_SUM_OF_MONEY = 1000;
     private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
+    public static final int PAUSE_TIME = 2_100_900_000;
     private final Scanner scanner;
     private BlackjackDeck deck;
     private BlackjackPlayer human;
@@ -76,6 +80,7 @@ public class Blackjack {
         } else {
             while (dealer.getCardsTotalValue() <= DEALERS_MAX_VALUE_FOR_DRAW) {
                 System.out.println("Dealer draws another card...");
+                pause();
                 dealer.dealCard(deck.getTopCard());
                 printHand(dealer);
             }
@@ -93,6 +98,11 @@ public class Blackjack {
         System.out.println("\n----------------\n");
     }
 
+    private void pause() {
+        for (long i = 0; i < PAUSE_TIME; i++){
+        }
+    }
+
     private void humanWonRound(int bet) {
         printBothHands();
         System.out.println("You've won this round!");
@@ -101,6 +111,7 @@ public class Blackjack {
 
     private void humanLostRound(int bet) {
         printBothHands();
+        pause();
         System.out.println("You've lost this round!");
         human.looseMoney(bet);
     }
@@ -166,6 +177,7 @@ public class Blackjack {
 
     private void printBothHands() {
         System.out.println("\nEnd of round results:");
+        pause();
         printHand(human);
         printHand(dealer);
     }

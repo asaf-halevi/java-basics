@@ -1,9 +1,9 @@
-package _11_blackjack;
+package _11_final_project.card_games;
 
 import java.util.Arrays;
 
 public class Deck {
-    protected static final int DECK_SIZE = 52;
+    public static final int DECK_SIZE = 52;
     private static final int NUM_OF_SWAPS = 1000;
 
     private final Card[] cards;

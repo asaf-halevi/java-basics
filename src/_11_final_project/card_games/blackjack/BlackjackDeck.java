@@ -1,4 +1,6 @@
-package _11_blackjack;
+package _11_final_project.card_games.blackjack;
+
+import _11_final_project.card_games.Deck;
 
 public class BlackjackDeck extends Deck {
 

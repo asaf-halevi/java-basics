@@ -1,4 +1,6 @@
-package _11_blackjack;
+package _11_final_project.card_games.blackjack;
+
+import _11_final_project.card_games.Card;
 
 public class BlackjackCard extends Card {
     private static final int LENGTH_OF_ACE = ACE.length();
