@@ -13,7 +13,7 @@ public class Blackjack {
     private static final int INITIAL_SUM_OF_MONEY = 1000;
     private static final int[] VALID_BETS = {1, 5, 10, 50, 100};
     private final Scanner scanner;
-    private Deck deck;
+    private BlackjackDeck deck;
     private BlackjackPlayer human;
     private BlackjackPlayer dealer;
     private int gamesPlayed;
@@ -35,7 +35,7 @@ public class Blackjack {
     }
 
     private void startGame() {
-        deck = new Deck();
+        deck = new BlackjackDeck();
         human = new BlackjackPlayer((Deck.DECK_SIZE / 2), INITIAL_SUM_OF_MONEY);
         dealer = new BlackjackPlayer((Deck.DECK_SIZE / 2));
         gamesPlayed = 0;
