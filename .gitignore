@@ -2,4 +2,3 @@
 /.idea/runConfigurations.xml
 /target/
 /target/*.*
-/${project.build.directory}/
