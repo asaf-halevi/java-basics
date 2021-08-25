@@ -22,7 +22,7 @@ public class BlackjackPlayer extends CardPlayer {
         cardsTotalValue = 0;
         int numberOfAces = 0;
         for (int i = 0; i < getCardIndex(); i++) {
-            cardsTotalValue += getCard(i).getValue();
+            cardsTotalValue += ((BlackjackCard) getCard(i)).getValue();
             if (getCard(i).isAce()) {
                 numberOfAces++;
             }

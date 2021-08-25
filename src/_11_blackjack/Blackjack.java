@@ -25,9 +25,13 @@ public class Blackjack {
 
     public static void main(String[] args) {
         Blackjack game = new Blackjack();
-        game.startGame();
-        game.playAllRounds();
-        game.finishGame();
+        game.playBlackjack();
+    }
+
+    public void playBlackjack() {
+        startGame();
+        playAllRounds();
+        finishGame();
     }
 
     private void startGame() {

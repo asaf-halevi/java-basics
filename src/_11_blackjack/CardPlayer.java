@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CardPlayer {
     private final int maxCardsInHand;
-    private BlackjackCard[] cards;
+    private Card[] cards;
     private int cardIndex;
     private int money;
 
@@ -19,11 +19,11 @@ public class CardPlayer {
     }
 
     public void resetCards() {
-        cards = new BlackjackCard[maxCardsInHand];
+        cards = new Card[maxCardsInHand];
         cardIndex = 0;
     }
 
-    public void dealCard(BlackjackCard card) {
+    public void dealCard(Card card) {
         cards[cardIndex++] = card;
     }
 
@@ -54,11 +54,11 @@ public class CardPlayer {
         System.out.println("You now have " + money + "$");
     }
 
-    public BlackjackCard getCard(int i) {
+    public Card getCard(int i) {
         return cards[i];
     }
 
-    public BlackjackCard[] getCards() {
+    public Card[] getCards() {
         return cards;
     }
 
