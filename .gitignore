@@ -1,5 +1,6 @@
 /run
-/.idea/runConfigurations.xml
+/.idea/
+/.idea/*.*
 /target/
 /target/*.*
 /out/
