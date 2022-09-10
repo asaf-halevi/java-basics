@@ -17,46 +17,39 @@ import java.util.Scanner;
 public class StarIsBorn {
 
     public static void main(String[] args) {
-        int numOfcompetitors;
-        int curVote;
-        int[] votes; // This array represents the number of votes of each competitor
+        int numOfCompetitors;
+        int currentVote;
+        int[] votesPerCompetitor;
 
         Scanner in = new Scanner(System.in);
 
         System.out.println("Please enter the numbers of competitors: ");
-        numOfcompetitors = in.nextInt();
-        votes = new int[numOfcompetitors];
+        numOfCompetitors = in.nextInt();
+        votesPerCompetitor = new int[numOfCompetitors];
 
-        // Read the first vote
-        System.out.println("Enter vote (between 1.." + numOfcompetitors + ", -1 to finish)");
-        curVote = in.nextInt();
+        System.out.println("Enter vote (between 1.." + numOfCompetitors + ", -1 to finish)");
+        currentVote = in.nextInt();
 
-        while (curVote != -1) // Repeat while vote is not -1
-        {
-            votes[curVote - 1]++; // add the current vote to the relevant competitor
+        while (currentVote != -1) {
+            votesPerCompetitor[currentVote - 1]++;
 
-            System.out.println("Enter vote (between 1.." + numOfcompetitors + ", -1 to finish)");
-            curVote = in.nextInt(); // Read the next vote
+            System.out.println("Enter vote (between 1.." + numOfCompetitors + ", -1 to finish)");
+            currentVote = in.nextInt();
         }
 
-        // print the votes array
+        System.out.println("The votesPerCompetitor are: ");
+        System.out.println(Arrays.toString(votesPerCompetitor));
 
-        System.out.println("The votes are: ");
-        System.out.println(Arrays.toString(votes));
-
-        // Find the min value and index
-
-        int minVal = votes[0];
+        int minVal = votesPerCompetitor[0];
         int minIndex = 0;
 
-        for (int i = 1; i < votes.length; i++) {
-            if (votes[i] < minVal) {
-                minVal = votes[i];
+        for (int i = 1; i < votesPerCompetitor.length; i++) {
+            if (votesPerCompetitor[i] < minVal) {
+                minVal = votesPerCompetitor[i];
                 minIndex = i;
             }
         }
 
         System.out.println("The competitor that leaves the show is: " + (minIndex + 1));
     }
-
 }
