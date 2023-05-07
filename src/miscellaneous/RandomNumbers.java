@@ -4,10 +4,10 @@ public class RandomNumbers {
     public static void main(String[] args) {
         for (int i = 0; i < 20; i++) {
             basicRandom();
-//           dice();
-//           grade();
+            //           dice();
+            //           grade();
         }
-//        verifyGrade();
+        //        verifyGrade();
     }
 
     /**

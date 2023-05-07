@@ -128,12 +128,14 @@ public class Book {
                 isAvailable() == book.isAvailable() &&
                 isDeliveryRequired() == book.isDeliveryRequired() &&
                 Objects.equals(getIsbn(), book.getIsbn()) &&
-                Objects.equals(getName(), book.getName()) && Objects.equals(getLanguage(), book.getLanguage()) && Objects.equals(getAuthor(), book.getAuthor());
+                Objects.equals(getName(), book.getName()) && Objects.equals(getLanguage(), book.getLanguage()) && Objects.equals(
+                getAuthor(), book.getAuthor());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getIsbn(), getName(), getLanguage(), getAuthor(), getPrice(), getDiscount(), isAvailable(), isDeliveryRequired());
+        return Objects.hash(getIsbn(), getName(), getLanguage(), getAuthor(), getPrice(), getDiscount(), isAvailable(),
+                isDeliveryRequired());
     }
 
     /*@Override

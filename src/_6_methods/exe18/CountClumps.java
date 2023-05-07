@@ -44,7 +44,8 @@ public class CountClumps {
             if ((arr[currIndex] == arr[nextIndex]) && !inClump) {
                 inClump = true;    // Indicate that we are inside a clump
                 count++;        // Add 1 to the clump counter
-            } else if (arr[currIndex] != arr[nextIndex])    // If the 2 current element are not the same - update inClump to indicate that we are not in a clump
+            } else if (arr[currIndex]
+                    != arr[nextIndex])    // If the 2 current element are not the same - update inClump to indicate that we are not in a clump
             {
                 inClump = false;
             }

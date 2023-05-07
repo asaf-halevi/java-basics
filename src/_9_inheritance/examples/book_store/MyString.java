@@ -20,7 +20,8 @@ public class MyString {
         System.out.println("You asked to see character number " + userIndex);
         System.out.println("That is the character " + userString.charAt(userIndex - 1));
 
-        System.out.println("The 1st, 3rd and 5th characters are " + userString.charAt(0) + "," + userString.charAt(2) + "," + userString.charAt(4));
+        System.out.println(
+                "The 1st, 3rd and 5th characters are " + userString.charAt(0) + "," + userString.charAt(2) + "," + userString.charAt(4));
         System.out.println(("the last Character is " + userString.charAt(userString.length() - 1)));
 
         System.out.println("substring please.");

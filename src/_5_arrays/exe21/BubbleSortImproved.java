@@ -17,9 +17,9 @@ import java.util.Arrays;
 public class BubbleSortImproved {
 
     public static void main(String[] args) {
-//		int[] array = { 3, 1, 40, 2, 100, 8 }; 	// 3 passes
+        //		int[] array = { 3, 1, 40, 2, 100, 8 }; 	// 3 passes
         int[] array = {1, 2, 3, 4, 5, 6};        // The array is sorted - only 1 pass is needed
-//		int[] array = { 6, 5, 4, 3, 2, 1 };		// The array is sorted descending - 5 passes are needed
+        //		int[] array = { 6, 5, 4, 3, 2, 1 };		// The array is sorted descending - 5 passes are needed
 
         int passIndex = array.length - 1;
         int numOfPass = 0;

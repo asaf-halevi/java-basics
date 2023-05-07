@@ -11,7 +11,7 @@ public class Ex07CopyArrByVal {
             numbers2[i] = numbers1[i];
         }
 
-//        numbers2[0] = 100;
+        //        numbers2[0] = 100;
 
         System.out.print("The original array: ");
         for (int number : numbers1) {

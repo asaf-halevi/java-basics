@@ -16,7 +16,7 @@ public class SpecificMethodsExample {
         FlyingFish fish = new FlyingFish("Marta");
         fish.sayHi();
         specificMethodsExample.makeAnimalFly(fish);
-//		specificMethodsExample.makeAnimalRun(fish); //Won't work
+        //		specificMethodsExample.makeAnimalRun(fish); //Won't work
         specificMethodsExample.makeAnimalSwim(fish);
     }
 

@@ -25,16 +25,16 @@ public class ZooKeeper {
         animals[2].sayHi();
 
         //even better...
-//		for (Animal animal : animals){
-//			animal.sayHi();
-//		}
+        //		for (Animal animal : animals){
+        //			animal.sayHi();
+        //		}
     }
 
     public void feedAnimals() {
         //Why won't it work?
-//		for (Animal animal : animals){
-//			animal.eat();
-//		}
+        //		for (Animal animal : animals){
+        //			animal.eat();
+        //		}
 
         //We have to use casting!
         ((Dog) animals[0]).eat();
@@ -42,16 +42,16 @@ public class ZooKeeper {
         ((Spider) animals[2]).eat();
 
         //What's wrong here?
-//		((Dog)animals[2]).eat();
+        //		((Dog)animals[2]).eat();
 
-//		for (Animal animal : animals){
-//			if (animal instanceof Dog) {
-//				((Dog) animal).eat();
-//			} else if (animal instanceof Dog) {
-//				((Fish) animal).eat();
-//			} else if (animal instanceof Dog) {
-//				((Spider) animal).eat();
-//			}
-//		}
+        //		for (Animal animal : animals){
+        //			if (animal instanceof Dog) {
+        //				((Dog) animal).eat();
+        //			} else if (animal instanceof Dog) {
+        //				((Fish) animal).eat();
+        //			} else if (animal instanceof Dog) {
+        //				((Spider) animal).eat();
+        //			}
+        //		}
     }
 }

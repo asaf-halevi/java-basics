@@ -17,7 +17,8 @@ public class Ex09StudentsManagingSystem {
 
         printStudentsList(students);
 
-        System.out.println("\nCurrent number of students is: " + Ex09StudentWithStaticBlock.getNumberOfStudents());//students[3].getMaxNumberOfStudents() ?
+        System.out.println("\nCurrent number of students is: "
+                + Ex09StudentWithStaticBlock.getNumberOfStudents());//students[3].getMaxNumberOfStudents() ?
     }
 
     private static void printStudentsList(Ex09StudentWithStaticBlock[] students) {

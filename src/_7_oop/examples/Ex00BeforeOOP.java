@@ -10,8 +10,8 @@ public class Ex00BeforeOOP {
         String[] familyName = {"Bolton", "Stark", "Lannister"};
 
         printStudentsList(studentId, privateName, familyName);
-//        sortStudentsByFamilyName(familyName);
-//        printStudentsList(studentId, privateName, familyName);
+        //        sortStudentsByFamilyName(familyName);
+        //        printStudentsList(studentId, privateName, familyName);
     }
 
     private static void printStudentsList(long[] studentId, String[] privateName, String[] familyName) {

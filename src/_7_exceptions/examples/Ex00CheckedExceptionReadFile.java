@@ -6,12 +6,12 @@ import java.io.IOException;
 
 public class Ex00CheckedExceptionReadFile {
     public static void main(String[] args) throws IOException {//must add throws or try-catch block
-//        try {
+        //        try {
         printTextFile();
-//        } catch (IOException e) {
-//            System.err.println("An exception occurred: " + e.getMessage());
-//            e.printStackTrace();
-//        }
+        //        } catch (IOException e) {
+        //            System.err.println("An exception occurred: " + e.getMessage());
+        //            e.printStackTrace();
+        //        }
         System.out.println("Everything was fine!");
     }
 

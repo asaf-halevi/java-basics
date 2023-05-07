@@ -15,14 +15,14 @@ public class Main {
             System.out.println("Im not the same book");
         }
 
-//        System.out.println(ilansBook.equals(ilansBook));
-//        System.out.println(ilansBook.equals(Book.class.getClass()));
-//
-//        System.out.println(ilansBook);
-//        if (ilansBook.equals(ilansNewBook)) {
-//            System.out.println("equal book");
-//        } else {
-//            System.out.println("non equal book");
-//        }
+        //        System.out.println(ilansBook.equals(ilansBook));
+        //        System.out.println(ilansBook.equals(Book.class.getClass()));
+        //
+        //        System.out.println(ilansBook);
+        //        if (ilansBook.equals(ilansNewBook)) {
+        //            System.out.println("equal book");
+        //        } else {
+        //            System.out.println("non equal book");
+        //        }
     }
 }

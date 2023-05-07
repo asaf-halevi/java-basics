@@ -13,7 +13,8 @@ public class Ex08StudentsManagingSystem {
 
         printStudentsList(students);
 
-        System.out.println("\nCurrent number of students is: " + Ex08StudentWithStaticMethod.getNumberOfStudents());//students[3].getMaxNumberOfStudents() ?
+        System.out.println("\nCurrent number of students is: "
+                + Ex08StudentWithStaticMethod.getNumberOfStudents());//students[3].getMaxNumberOfStudents() ?
     }
 
     private static void printStudentsList(Ex08StudentWithStaticMethod[] students) {

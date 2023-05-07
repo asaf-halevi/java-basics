@@ -15,8 +15,8 @@ public class RemoveByLen {
 
     public static void main(String[] args) {
         String[] arr = {"this", "not", "too", "long"};
-//		String[] arr = { "a", "bbb", "cccc" };
-//		String[] arr = { "cccc", "cccc", "cccc", "cccc" };
+        //		String[] arr = { "a", "bbb", "cccc" };
+        //		String[] arr = { "cccc", "cccc", "cccc", "cccc" };
 
         String[] res = removeLongElements(arr, 4);
 
